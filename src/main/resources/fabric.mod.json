@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "ancient_ruins",
+  "version": "${version}",
+  "name": "Ancient Ruins",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/ancient_ruins/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.osteam.ancient_ruins.client.Ancient_ruinsDataGenerator"
+    ],
+    "client": [
+      "org.osteam.ancient_ruins.client.Ancient_ruinsClient"
+    ],
+    "main": [
+      "org.osteam.ancient_ruins.Ancient_ruins"
+    ]
+  },
+  "mixins": [
+    "ancient_ruins.mixins.json",
+    {
+      "config": "ancient_ruins.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
